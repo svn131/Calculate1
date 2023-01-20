@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) throws trowsException {
         int x = 0;
 
+
         ///////////////////
 //            throw new trowsException();
 //          throw  new trowsException();}
@@ -123,16 +124,18 @@ public class Main {
 
         }
 
-        //Арефметическое действие
+
+
+        Deistvie deistvie = new Deistvie();
         if (a < 11 && b < 11) {
             if (vvedenoeMasiv[1].equals("-")) {
-                x = a - b;
+                x = deistvie.minus(a,b);
             } else if (vvedenoeMasiv[1].equals("/")) {
-                x = a / b;
+                x = deistvie.delenie(a,b);
             } else if (vvedenoeMasiv[1].equals("*")) {
-                x = a * b;
+                x = deistvie.umnoghenie(a,b);
             } else if (vvedenoeMasiv[1].equals("+")) {
-                x = a + b;
+                x = deistvie.sum(a,b);
             } else {
                 throw new trowsException();
             }
@@ -140,6 +143,37 @@ public class Main {
         else {
             throw new trowsException();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//        //Арефметическое действие
+//        if (a < 11 && b < 11) {
+//            if (vvedenoeMasiv[1].equals("-")) {
+//                x = a - b;
+//            } else if (vvedenoeMasiv[1].equals("/")) {
+//                x = a / b;
+//            } else if (vvedenoeMasiv[1].equals("*")) {
+//                x = a * b;
+//            } else if (vvedenoeMasiv[1].equals("+")) {
+//                x = a + b;
+//            } else {
+//                throw new trowsException();
+//            }
+//        }
+//        else {
+//            throw new trowsException();
+//        }
+
 
 
 
@@ -211,7 +245,7 @@ public class Main {
             } else if (masivOtvet[i].equals("9")) {
                 masivRim[i] = "IX";
             } else if (masivOtvet[i].equals("0")) {
-               masivRim[i]  = "";
+                masivRim[i]  = "";
             }
 
             System.out.print(masivRim[0]);
@@ -225,8 +259,22 @@ public class Main {
         }
     }
 }
+class Deistvie {
+    public int sum( int a, int b){
+        return a+b;
+    }
+    public int minus(int a, int b){
+        return a-b;
+    }
 
+    public int umnoghenie (int a,int b){
+        return a*b;
+    }
 
+    public int delenie (int a, int b){
+        return a/b;
+    }
+}
 
 
 
