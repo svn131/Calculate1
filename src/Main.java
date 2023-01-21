@@ -1,12 +1,10 @@
-import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.stream.Collectors;
+
 //  получаем в виде масива деленое по пробелу.
 public class Main {
     public static void main(String[] args) throws trowsException {
-        int x = 0;
+
+
 
         ///////////////////
 //            throw new trowsException();
@@ -16,6 +14,16 @@ public class Main {
         Scanner scn = new Scanner(System.in);
         System.out.println("Введите ваш пример");
         String vvedenayaStroka = scn.nextLine();
+        Calculator calcc = new Calculator();
+        String u = String.valueOf(calcc.calc(vvedenayaStroka));
+        System.out.println(u);
+    }
+}
+class Calculator {
+    public  static String calc(String vvedenayaStroka) throws trowsException {
+
+        int x = 0;
+
         String[] vvedenoeMasiv = vvedenayaStroka.split(" ");
         int a = 0;
         int b = 0;
@@ -122,8 +130,7 @@ public class Main {
             }
 
         }
-
-        //Арефметическое действие
+        //Арефметическое дейст
         if (a < 11 && b < 11) {
             if (vvedenoeMasiv[1].equals("-")) {
                 x = a - b;
@@ -144,9 +151,12 @@ public class Main {
 
 
 
+        String s = null;
+        String t = null;
 
         if (rim == false) {
-            System.out.println(x);
+            String x1 = String.valueOf(x);
+            return x1;
         } else if (x > 0) {
             String z = Integer.toString(x); // поменял тип переменной
             String[] masivOtvet = z.split("");// создал из нее
@@ -211,21 +221,25 @@ public class Main {
             } else if (masivOtvet[i].equals("9")) {
                 masivRim[i] = "IX";
             } else if (masivOtvet[i].equals("0")) {
-               masivRim[i]  = "";
+                masivRim[i]  = "";
             }
 
-            System.out.print(masivRim[0]);
+            s = masivRim[0];
             if (i == 1) {
-                System.out.print(masivRim[1]);
+                t = masivRim[1];
+                return s+t;
             }
-//            System.out.println(b);
+
+            else {
+                return s;
+            }
         }
         else {
             throw new trowsException();//исключение в случаее если римское число отрицательное
         }
+
     }
 }
-
 
 
 
