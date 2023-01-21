@@ -237,8 +237,10 @@ class Calculator {
         else {
             throw new trowsException();//исключение в случаее если римское число отрицательное
         }
+
     }
 }
+
 
 
 
